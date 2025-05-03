@@ -1,4 +1,11 @@
 function mostrarMensagem() {
   document.getElementById("mensagem").innerText =
-    "sua existência é importante, não morra, e se for morrer, morra comigo";
+    "eu te amo princesa 🤍";
+}
+
+function liberarSite() {
+  document.getElementById("entrada").style.display = "none";
+  const conteudo = document.getElementById("conteudoSite");
+  conteudo.classList.remove("oculto");
+  conteudo.classList.add("revelado");
 }
