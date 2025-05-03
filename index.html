@@ -3,15 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title><3</title>
+  <title>Yaisha</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="music-controls">
-    <button id="playPauseBtn">▶️</button>
+    <button id="playPauseBtn">Play</button>
     <input type="range" id="volumeControl" min="0" max="100" value="100" />
-    <button onclick="changeVolume(-10)">-</button>
-    <button onclick="changeVolume(10)">+</button>
   </div>
 
   <div id="bloqueio" class="bloqueio">
@@ -26,12 +24,8 @@
     </div>
   </div>
 
-  <div class="musica">
-    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/6tIoXcKI2qpMsXCdFP3Gi0?utm_source=generator" width="100%" height="80" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe>
-  </div>
-
   <audio id="audioPlayer" loop>
-    <source src="sua_musica.mp3" type="audio/mp3" />
+    <source src="musica.mp3" type="audio/mp3" />
     Seu navegador não suporta o elemento de áudio.
   </audio>
 
