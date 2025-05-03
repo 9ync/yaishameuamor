@@ -38,22 +38,22 @@ body {
 
 .mural {
   padding: 30px;
-  border: 3px solid transparent;
+  border: 2px solid white;
   border-radius: 20px;
   background-color: #111;
   text-align: center;
   width: 80%;
-  max-width: 500px;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3), 0 0 30px rgba(255, 255, 255, 0.2);
-  animation: brilho 3s infinite alternate;
+  max-width: 400px;
+  box-shadow: 0 0 15px white, 0 0 25px white;
+  animation: brilho 2s infinite alternate;
 }
 
 @keyframes brilho {
   from {
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 10px #fff;
   }
   to {
-    box-shadow: 0 0 40px rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 25px #fff;
   }
 }
 
@@ -67,44 +67,4 @@ body {
 
 .oculto {
   display: none;
-}
-
-.music-controls {
-  position: absolute;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 18px;
-  color: white;
-}
-
-.music-controls button {
-  background: none;
-  border: 1px solid white;
-  color: white;
-  padding: 5px 15px;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: background 0.3s;
-}
-
-.music-controls button:hover {
-  background-color: #444;
-}
-
-.music-controls input[type="range"] {
-  width: 150px;
-  background-color: #444;
-  border-radius: 5px;
-  height: 5px;
-}
-
-.music-controls input[type="range"]::-webkit-slider-thumb {
-  background-color: #fff;
-  border-radius: 50%;
-  width: 15px;
-  height: 15px;
 }
