@@ -6,7 +6,6 @@ body {
   font-family: 'Arial', sans-serif;
 }
 
-/* Tela inicial com letra */
 .bloqueio {
   height: 100vh;
   display: flex;
@@ -26,7 +25,6 @@ body {
   color: #888;
 }
 
-/* Conteúdo desbloqueado */
 .conteudo {
   display: flex;
   justify-content: center;
@@ -57,9 +55,10 @@ body {
 }
 
 .foto {
-  width: 100%;
-  max-width: 300px;
-  border-radius: 20px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
   margin-bottom: 20px;
 }
 
