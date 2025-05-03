@@ -1,6 +1,6 @@
 function mostrarMensagem() {
   document.getElementById("mensagem").innerText =
-    "eu te amo princesa 🤍";
+    "minha garota...";
 }
 
 function liberarSite() {
