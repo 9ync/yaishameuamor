@@ -31,7 +31,7 @@ body {
   background-color: #ddd;
 }
 
-/* Conteúdo do site */
+/* Conteúdo do site com borda neon */
 .container {
   position: relative;
   max-width: 600px;
@@ -40,29 +40,21 @@ body {
   text-align: center;
   background-color: #111;
   border-radius: 20px;
-  z-index: 1;
-  overflow: hidden;
+  border: 2px solid transparent;
+  box-shadow: 0 0 15px 2px rgba(255, 255, 255, 0.1), 
+              0 0 25px 3px rgba(255, 255, 255, 0.05);
+  animation: brilhoBorda 3s ease-in-out infinite alternate;
 }
 
-.container::before {
-  content: '';
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  background: linear-gradient(45deg, #000, #333, #000, #666, #000);
-  background-size: 400% 400%;
-  animation: brilho 5s linear infinite;
-  z-index: -1;
-  border-radius: 22px;
-  filter: brightness(1.5);
-}
-
-@keyframes brilho {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+@keyframes brilhoBorda {
+  0% {
+    box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.1), 
+                0 0 20px 4px rgba(255, 255, 255, 0.05);
+  }
+  100% {
+    box-shadow: 0 0 20px 3px rgba(255, 255, 255, 0.2), 
+                0 0 30px 5px rgba(255, 255, 255, 0.1);
+  }
 }
 
 h1 {
