@@ -1,10 +1,6 @@
-* {
+body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
-
-body {
   background: #000;
   color: white;
   font-family: 'Arial', sans-serif;
@@ -38,30 +34,31 @@ body {
 
 .mural {
   padding: 30px;
-  border: 2px solid white;
+  border: 3px solid transparent;
   border-radius: 20px;
   background-color: #111;
   text-align: center;
-  width: 80%;
-  max-width: 400px;
-  box-shadow: 0 0 15px white, 0 0 25px white;
-  animation: brilho 2s infinite alternate;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2),
+              0 0 30px rgba(255, 255, 255, 0.1);
+  animation: brilho 3s infinite alternate;
 }
 
 @keyframes brilho {
   from {
-    box-shadow: 0 0 10px #fff;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
   }
   to {
-    box-shadow: 0 0 25px #fff;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.4);
   }
 }
 
 .foto {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
+  width: 150px;       /* Imagem menor */
+  height: 150px;      /* Mantendo proporção quadrada */
+  border-radius: 50%; /* Deixa a imagem em forma de esfera */
+  object-fit: cover;  /* Faz a imagem preencher o círculo sem distorção */
   margin-bottom: 20px;
 }
 
