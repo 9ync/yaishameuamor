@@ -7,28 +7,19 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="music-controls">
-    <button id="playPauseBtn">Play</button>
-    <input type="range" id="volumeControl" min="0" max="100" value="100" />
-  </div>
-
   <div id="bloqueio" class="bloqueio">
-    <span class="letra" onclick="liberar()"> &lt;3 </span>
+    <span class="letra" onclick="liberar()">&lt;3</span>
   </div>
 
   <div id="conteudo" class="conteudo oculto">
     <div class="mural">
       <img src="yaisha.jpg" alt="Yaisha" class="foto" />
       <h1>my girl</h1>
-      <p>essa garota acima, eu AMO ela, hoje, no dia 16 de maio, de 2025, ela faz aniversário, eu AMO ela, eu sinceramente quero amar por toda a eternidade, yaisha, meu amor.</p>
+      <p>essa garota acima é MUITO linda, e magnífica, eu AMO ela, hoje, no dia 16 de maio, de 2025, ela faz aniversário, eu AMO ela, eu sinceramente quero amar por toda a eternidade, yaisha, meu amor.</p>
     </div>
   </div>
 
-  <audio id="audioPlayer" loop>
-    <source src="musica.mp3" type="audio/mp3" />
-    Seu navegador não suporta o elemento de áudio.
-  </audio>
-
+  <audio id="bgMusic" src="musica.mp3" autoplay loop></audio>
   <script src="script.js"></script>
 </body>
 </html>
