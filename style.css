@@ -55,10 +55,10 @@ body {
 }
 
 .foto {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  object-fit: cover;
+  width: 150px;       /* Imagem menor */
+  height: 150px;      /* Mantendo proporção quadrada */
+  border-radius: 50%; /* Deixa a imagem em forma de esfera */
+  object-fit: cover;  /* Faz a imagem preencher o círculo sem distorção */
   margin-bottom: 20px;
 }
 
