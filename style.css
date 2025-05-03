@@ -44,9 +44,9 @@ body {
   border-radius: 20px;
   background-color: #111;
   text-align: center;
-  width: 80%; /* Reduzido o tamanho */
-  max-width: 500px; /* Ajuste para ficar mais compacto */
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3), 0 0 30px rgba(255, 255, 255, 0.2); /* Brilho maior */
+  width: 80%;
+  max-width: 500px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3), 0 0 30px rgba(255, 255, 255, 0.2);
   animation: brilho 3s infinite alternate;
 }
 
@@ -55,7 +55,7 @@ body {
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
   }
   to {
-    box-shadow: 0 0 40px rgba(255, 255, 255, 0.5); /* Brilho mais intenso */
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.5);
   }
 }
 
@@ -71,7 +71,6 @@ body {
   display: none;
 }
 
-/* Adicionando estilo ao player de música no topo */
 .music-controls {
   position: absolute;
   top: 20px;
