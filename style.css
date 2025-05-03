@@ -7,6 +7,31 @@ body {
   padding: 0;
 }
 
+/* Entrada inicial */
+.entrada {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+}
+
+.entrada button {
+  background-color: #fff;
+  color: #000;
+  border: none;
+  padding: 20px 40px;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.entrada button:hover {
+  background-color: #ddd;
+}
+
+/* Conteúdo do site */
 .container {
   position: relative;
   max-width: 600px;
@@ -19,7 +44,6 @@ body {
   overflow: hidden;
 }
 
-/* Efeito de borda brilhosa animada */
 .container::before {
   content: '';
   position: absolute;
@@ -36,15 +60,9 @@ body {
 }
 
 @keyframes brilho {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 h1 {
@@ -69,4 +87,24 @@ button {
 
 button:hover {
   background-color: #ddd;
+}
+
+.oculto {
+  display: none;
+}
+
+.revelado {
+  display: block;
+  animation: aparecer 1s ease-in-out;
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
