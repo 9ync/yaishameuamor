@@ -1,7 +1,11 @@
-body {
+* {
   margin: 0;
   padding: 0;
-  background: #000;
+  box-sizing: border-box;
+}
+
+body {
+  background: #1a1a1a;
   color: white;
   font-family: 'Arial', sans-serif;
 }
@@ -11,7 +15,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #000;
+  background: #1a1a1a;
 }
 
 .letra {
@@ -22,7 +26,7 @@ body {
 }
 
 .letra:hover {
-  color: #888;
+  color: #aaa;
 }
 
 .conteudo {
@@ -30,35 +34,36 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  padding: 20px;
 }
 
 .mural {
   padding: 30px;
-  border: 3px solid transparent;
+  border: 2px solid #888;
   border-radius: 20px;
-  background-color: #111;
+  background-color: #222;
   text-align: center;
   width: 90%;
-  max-width: 600px;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2),
-              0 0 30px rgba(255, 255, 255, 0.1);
-  animation: brilho 3s infinite alternate;
+  max-width: 400px;
+  box-shadow: 0 0 8px rgba(200, 200, 200, 0.1),
+              0 0 15px rgba(200, 200, 200, 0.08);
+  animation: leveBrilho 3s infinite alternate;
 }
 
-@keyframes brilho {
+@keyframes leveBrilho {
   from {
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.05);
   }
   to {
-    box-shadow: 0 0 25px rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.15);
   }
 }
 
 .foto {
-  width: 150px;       /* Imagem menor */
-  height: 150px;      /* Mantendo proporção quadrada */
-  border-radius: 50%; /* Deixa a imagem em forma de esfera */
-  object-fit: cover;  /* Faz a imagem preencher o círculo sem distorção */
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
   margin-bottom: 20px;
 }
 
