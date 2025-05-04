@@ -1,12 +1,8 @@
-* {
+body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  background: #1a1a1a;
-  color: white;
+  background: #1b1b1b;
+  color: #fff;
   font-family: 'Arial', sans-serif;
 }
 
@@ -15,7 +11,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #1a1a1a;
+  background: #1b1b1b;
 }
 
 .letra {
@@ -26,7 +22,7 @@ body {
 }
 
 .letra:hover {
-  color: #aaa;
+  color: #999;
 }
 
 .conteudo {
@@ -38,33 +34,56 @@ body {
 }
 
 .mural {
-  padding: 30px;
-  border: 2px solid #888;
+  padding: 25px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
   border-radius: 20px;
-  background-color: #222;
+  background-color: #1b1b1b;
   text-align: center;
   width: 90%;
-  max-width: 400px;
-  box-shadow: 0 0 8px rgba(200, 200, 200, 0.1),
-              0 0 15px rgba(200, 200, 200, 0.08);
-  animation: leveBrilho 3s infinite alternate;
+  max-width: 500px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05),
+              0 0 20px rgba(255, 255, 255, 0.05);
+  animation: brilhoSuave 4s infinite alternate;
 }
 
-@keyframes leveBrilho {
+@keyframes brilhoSuave {
   from {
-    box-shadow: 0 0 8px rgba(255, 255, 255, 0.05);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.03);
   }
   to {
-    box-shadow: 0 0 12px rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.07);
   }
 }
 
 .foto {
-  width: 150px;
-  height: 150px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 20px;
+}
+
+.texto-romantico {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #ccc;
+  margin-bottom: 25px;
+}
+
+.spotify-link {
+  display: inline-block;
+  font-size: 30px;
+  color: #1DB954;
+  background-color: #141414;
+  border-radius: 50%;
+  padding: 10px;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+.spotify-link:hover {
+  background-color: #1DB954;
+  color: #fff;
 }
 
 .oculto {
