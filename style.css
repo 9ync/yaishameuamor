@@ -2,122 +2,110 @@ body {
   margin: 0;
   padding: 0;
   background: #1b1b1b;
-  color: #fff;
+  color: #e0e0e0;
   font-family: 'Arial', sans-serif;
-  overflow-x: hidden;
 }
 
 .bloqueio {
   height: 100vh;
-  background-color: #000;
   display: flex;
   justify-content: center;
   align-items: center;
+  background: #000;
 }
 
 .letra {
-  font-size: 64px;
+  font-size: 60px;
   color: white;
   cursor: pointer;
-  transition: 0.4s ease;
+  transition: 0.3s;
+  user-select: none;
 }
 
 .letra:hover {
-  opacity: 0.6;
-}
-
-.fade-in {
-  animation: fadeIn 1s ease forwards;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.95); }
-  to { opacity: 1; transform: scale(1); }
+  color: #888;
 }
 
 .conteudo {
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
-  padding: 60px 20px;
   min-height: 100vh;
+  animation: fadeIn 1.2s ease forwards;
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1.2s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
 }
 
 .mural {
-  background-color: #222;
-  padding: 30px;
-  border-radius: 20px;
-  max-width: 500px;
-  width: 100%;
+  padding: 20px;
+  background-color: #252525;
+  border-radius: 16px;
   text-align: center;
-  box-shadow: 0 0 12px rgba(255,255,255,0.08);
-  transition: box-shadow 0.5s ease;
-  animation: muralIdle 3s infinite alternate;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+  transition: box-shadow 0.4s ease;
 }
 
 .mural:active {
-  animation: muralLigado 1s ease forwards;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
 }
 
-@keyframes muralIdle {
-  from { box-shadow: 0 0 10px rgba(255,255,255,0.03); }
-  to { box-shadow: 0 0 20px rgba(255,255,255,0.1); }
-}
-
-@keyframes muralLigado {
-  0% { box-shadow: 0 0 20px rgba(255,255,255,0.2); }
-  100% { box-shadow: 0 0 35px rgba(255,255,255,0.4); }
-}
-
-h1 {
+.mural h1 {
   font-size: 20px;
-  color: #eee;
-  text-shadow: 0 0 5px rgba(255,255,255,0.2);
+  margin-bottom: 10px;
+  color: #ffffff;
+  text-shadow: 0 0 4px rgba(255,255,255,0.3);
 }
 
-p {
+.mural p {
   font-size: 14px;
-  color: #ccc;
-  text-shadow: 0 0 4px rgba(255,255,255,0.1);
+  line-height: 1.6;
+  color: #cccccc;
+  text-shadow: 0 0 4px rgba(255,255,255,0.2);
 }
 
 .foto {
-  width: 200px;
-  height: 200px;
+  width: 140px;
+  height: 140px;
   object-fit: cover;
   border-radius: 50%;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
+  box-shadow: 0 0 6px rgba(0,0,0,0.4);
 }
 
 .embed {
-  margin-top: 25px;
+  margin-top: 20px;
 }
 
 .spotify-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: #2a2a2a;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 20px auto 0;
-  transition: background-color 0.3s ease;
-}
-
-.spotify-icon:hover {
-  background-color: #3b3b3b;
+  display: inline-block;
+  margin-top: 16px;
 }
 
 .spotify-icon img {
-  width: 22px;
-  height: 22px;
-  filter: brightness(0.7);
+  width: 26px;
+  height: 26px;
+  filter: grayscale(1) brightness(0.7);
+  transition: 0.3s ease;
+}
+
+.spotify-icon:hover img {
+  filter: grayscale(0) brightness(1);
 }
 
 .rodape {
   text-align: center;
-  margin-top: 60px;
-  font-size: 12px;
-  color: #777;
+  padding: 20px;
+  color: #999;
+  font-size: 13px;
 }
