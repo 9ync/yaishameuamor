@@ -1,96 +1,123 @@
-* {
+body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #1b1b1b, #232323);
-  background-size: 400% 400%;
-  animation: bgAnim 15s ease infinite;
-  color: #f0f0f0;
+  background: #1b1b1b;
+  color: #fff;
+  font-family: 'Arial', sans-serif;
   overflow-x: hidden;
-  height: 100vh;
 }
 
-#tela-inicial {
+.bloqueio {
+  height: 100vh;
+  background-color: #000;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background: #000;
-  animation: fadeIn 2s ease;
 }
 
-#botao-entrar {
-  font-size: 48px;
-  color: #fff;
-  background: none;
-  border: none;
+.letra {
+  font-size: 64px;
+  color: white;
   cursor: pointer;
-  transition: 0.3s;
+  transition: 0.4s ease;
 }
 
-#botao-entrar:hover {
-  text-shadow: 0 0 12px #fff;
+.letra:hover {
+  opacity: 0.6;
+}
+
+.fade-in {
+  animation: fadeIn 1s ease forwards;
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
 }
 
-@keyframes bgAnim {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-.oculto {
-  display: none;
-}
-
-#conteudo {
+.conteudo {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 60px 20px;
   min-height: 100vh;
-  padding: 20px;
 }
 
 .mural {
-  background: #202020;
-  border-radius: 16px;
-  padding: 20px;
-  width: 90%;
-  max-width: 360px;
+  background-color: #222;
+  padding: 30px;
+  border-radius: 20px;
+  max-width: 500px;
+  width: 100%;
   text-align: center;
-  box-shadow: 0 0 10px rgba(255,255,255,0.05);
-  transition: box-shadow 0.3s;
+  box-shadow: 0 0 12px rgba(255,255,255,0.08);
+  transition: box-shadow 0.5s ease;
+  animation: muralIdle 3s infinite alternate;
 }
 
-.mural.ativo {
-  box-shadow: 0 0 25px rgba(255,255,255,0.2);
+.mural:active {
+  animation: muralLigado 1s ease forwards;
 }
 
-.foto {
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  object-fit: cover;
-  filter: brightness(0.7);
-  margin-bottom: 15px;
+@keyframes muralIdle {
+  from { box-shadow: 0 0 10px rgba(255,255,255,0.03); }
+  to { box-shadow: 0 0 20px rgba(255,255,255,0.1); }
+}
+
+@keyframes muralLigado {
+  0% { box-shadow: 0 0 20px rgba(255,255,255,0.2); }
+  100% { box-shadow: 0 0 35px rgba(255,255,255,0.4); }
 }
 
 h1 {
   font-size: 20px;
-  margin: 8px 0;
-  color: #fff;
+  color: #eee;
+  text-shadow: 0 0 5px rgba(255,255,255,0.2);
 }
 
 p {
   font-size: 14px;
-  color: #eee;
-  margin-bottom: 15px;
+  color: #ccc;
+  text-shadow: 0 0 4px rgba(255,255,255,0.1);
+}
+
+.foto {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+.embed {
+  margin-top: 25px;
+}
+
+.spotify-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #2a2a2a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto 0;
+  transition: background-color 0.3s ease;
+}
+
+.spotify-icon:hover {
+  background-color: #3b3b3b;
+}
+
+.spotify-icon img {
+  width: 22px;
+  height: 22px;
+  filter: brightness(0.7);
+}
+
+.rodape {
+  text-align: center;
+  margin-top: 60px;
+  font-size: 12px;
+  color: #777;
 }
