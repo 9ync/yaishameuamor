@@ -3,21 +3,32 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>i luv my gf <3</title>
+  <title>Yaisha</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div id="tela-inicial" class="fade-in">
-    <button id="botao-entrar" onclick="mostrarMural()">&lt;3</button>
+  <div id="bloqueio" class="bloqueio">
+    <span class="letra" onclick="liberar()">&lt;3</span>
   </div>
 
-  <div id="conteudo" class="oculto">
-    <div class="mural" onclick="ativarMural(this)">
+  <div id="conteudo" class="conteudo fade-in" style="display: none;">
+    <div class="mural">
       <img src="yaisha.jpg" alt="Yaisha" class="foto" />
       <h1>my girl</h1>
-      <p>essa garota acima é MUITO linda, e magnífica, eu AMO ela, hoje, no dia 16 de maio, de 2025, ela faz aniversário, eu AMO ela, eu sinceramente quero amar por toda a eternidade, yaisha, meu amor.</p>
-      <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/6tIoXcKI2qpMsXCdFP3Gi0?utm_source=generator" width="100%" height="80" frameBorder="0" allowtransparency="true" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      <p>essa garota acima é MUITO linda, e magnífica, eu AMO ela, e hoje, no dia 16 de maio, de 2025, ela faz aniversário, eu AMO ela, eu sinceramente quero amar por toda a eternidade, yaisha, meu amor.</p>
+
+      <div class="embed">
+        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/6tIoXcKI2qpMsXCdFP3Gi0?utm_source=generator" width="100%" height="80" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      </div>
+
+      <a class="spotify-icon" href="https://open.spotify.com/playlist/37i9dQZF1EJMu857BvjtJD?si=_LXeKYiLQrS0XCmZpchgKw&pi=eOdggg2FS2aWl" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Spotify_icon.svg" alt="Spotify">
+      </a>
     </div>
+  </div>
+
+  <div class="rodape">
+    site feito com muito carinho, pelo pedro, homem da nini
   </div>
 
   <script src="script.js"></script>
