@@ -9,10 +9,6 @@ body, html {
   background: #0f0f0f;
   color: #ffffff;
   font-family: 'Segoe UI', Arial, sans-serif;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   scroll-behavior: smooth;
 }
 
@@ -59,10 +55,8 @@ body, html {
 
 .container {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  gap: 30px;
-  max-width: 1000px;
+  margin-bottom: 2rem;
 }
 
 .card {
@@ -71,15 +65,16 @@ body, html {
   border-radius: 20px;
   padding: 25px;
   width: 320px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
   text-align: center;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: 0.4s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform-style: preserve-3d;
 }
 
 .card:hover {
-  transform: scale(1.03);
-  box-shadow: 0 0 25px rgba(255,255,255,0.1);
+  transform: perspective(800px) rotateY(4deg) rotateX(4deg);
+  box-shadow: 0 0 30px rgba(255,255,255,0.2);
 }
 
 .card img {
@@ -88,7 +83,7 @@ body, html {
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 20px;
-  filter: brightness(0.8);
+  filter: brightness(0.85);
 }
 
 .card h2 {
@@ -105,11 +100,11 @@ body, html {
 }
 
 .embed {
-  margin-top: 20px;
+  margin-top: 2.5rem;
 }
 
 footer {
-  margin-top: 40px;
+  margin-top: 20px;
   font-size: 13px;
   color: #777;
   text-align: center;
