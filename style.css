@@ -2,19 +2,16 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 
 body, html {
   height: 100%;
-  background: #0f0f0f;
-  color: #ffffff;
   font-family: 'Segoe UI', Arial, sans-serif;
+  color: #ffffff;
   scroll-behavior: smooth;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-touch-callout: none;
 }
 
 #confirmacao {
@@ -23,7 +20,7 @@ body, html {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #000000;
+  background: #000;
   text-align: center;
 }
 
@@ -51,14 +48,14 @@ body, html {
   padding: 40px 20px;
   animation: fadeIn 1s ease forwards;
   background: #0f0f0f;
-  min-height: 100vh;
+  height: 100%;
 }
 
 .container {
   display: flex;
   justify-content: center;
   margin-bottom: 2rem;
-  flex: 1;
+  margin-top: 2rem;
 }
 
 .card {
@@ -102,11 +99,11 @@ body, html {
 }
 
 .embed {
-  margin-top: 2.5rem;
+  margin-top: 1.5rem;
 }
 
 footer {
-  margin-top: 20px;
+  margin-top: 10px;
   font-size: 13px;
   color: #777;
   text-align: center;
