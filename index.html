@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>i luv my gf <3</title>
+  <title>i luv my gf</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div id="confirmacao">
-    <button onclick="mostrarSite()">♡</button>
+    <button onclick="mostrarSite()">luv</button>
   </div>
 
   <div id="site">
@@ -17,9 +17,7 @@
         <img src="yaisha.jpg" alt="Yaisha" />
         <h2>♡</h2>
         <p>...</p>
-        <div class="embed">
-          <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/6tIoXcKI2qpMsXCdFP3Gi0?utm_source=generator" width="100%" height="80" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-        </div>
+        <div class="vinil" id="disco"></div>
       </div>
     </div>
 
@@ -36,6 +34,8 @@
       const audio = new Audio('musica.mp3');
       audio.loop = true;
       audio.play();
+
+      document.getElementById('disco').classList.add('girar');
     }
   </script>
 </body>
