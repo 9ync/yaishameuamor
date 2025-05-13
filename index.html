@@ -17,9 +17,7 @@
         <img src="yaisha.jpg" alt="Yaisha" />
         <h2>♡</h2>
         <p>...</p>
-        <div class="vinil" id="disco">
-          <div class="disco-interno"></div>
-        </div>
+        <div class="vinil" id="disco"></div>
       </div>
     </div>
 
@@ -30,12 +28,13 @@
 
   <script>
     function mostrarSite() {
-      document.getElementById('conirmacao').style.display = 'none';
+      document.getElementById('confirmacao').style.display = 'none';
       document.getElementById('site').style.display = 'flex';
 
       const audio = new Audio('musica.mp3');
       audio.loop = true;
       audio.play();
+
     }
   </script>
 </body>
