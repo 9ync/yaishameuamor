@@ -10,6 +10,11 @@ body, html {
   color: #ffffff;
   font-family: 'Segoe UI', Arial, sans-serif;
   scroll-behavior: smooth;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
 }
 
 #confirmacao {
@@ -20,12 +25,6 @@ body, html {
   align-items: center;
   background: #000000;
   text-align: center;
-}
-
-#confirmacao h1 {
-  font-size: 48px;
-  margin-bottom: 20px;
-  animation: fadeIn 2s ease-in-out;
 }
 
 #confirmacao button {
@@ -47,19 +46,19 @@ body, html {
 
 #site {
   display: none;
-  height: 100vh;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 20px;
+  padding: 40px 20px;
   animation: fadeIn 1s ease forwards;
+  background: #0f0f0f;
+  min-height: 100vh;
 }
 
 .container {
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 100%;
+  margin-bottom: 2rem;
+  flex: 1;
 }
 
 .card {
@@ -107,7 +106,7 @@ body, html {
 }
 
 footer {
-  margin-top: 5px;
+  margin-top: 20px;
   font-size: 13px;
   color: #777;
   text-align: center;
