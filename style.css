@@ -22,12 +22,6 @@ body, html {
   text-align: center;
 }
 
-#confirmacao h1 {
-  font-size: 48px;
-  margin-bottom: 20px;
-  animation: fadeIn 2s ease-in-out;
-}
-
 #confirmacao button {
   font-size: 20px;
   padding: 12px 32px;
@@ -99,10 +93,6 @@ body, html {
   line-height: 1.6;
 }
 
-.embed {
-  margin-top: 2.5rem;
-}
-
 footer {
   margin-top: 20px;
   font-size: 13px;
@@ -113,4 +103,38 @@ footer {
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+.vinil {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, #111 30%, #000 70%, #222 100%);
+  border: 6px solid #000;
+  position: relative;
+  margin-top: 2.5rem;
+  box-shadow: 
+    0 0 25px rgba(255, 255, 255, 0.05),
+    0 0 8px rgba(255, 255, 255, 0.1) inset;
+}
+
+.vinil::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  background: #555;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.girar {
+  animation: girar 3s linear infinite;
+}
+
+@keyframes girar {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
