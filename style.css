@@ -1,146 +1,115 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+box-sizing: border-box;
+margin: 0;
+padding: 0;
 }
 
 body, html {
-  height: 100%;
-  background: #0f0f0f;
-  color: #ffffff;
-  font-family: 'Segoe UI', Arial, sans-serif;
-  scroll-behavior: smooth;
+height: 100%;
+background: #0f0f0f;
+color: #ffffff;
+font-family: 'Segoe UI', Arial, sans-serif;
+scroll-behavior: smooth;
 }
 
 #confirmacao {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: #000;
-  text-align: center;
+height: 100vh;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+background: #000;
+text-align: center;
+}
+
+#confirmacao h1 {
+font-size: 48px;
+margin-bottom: 20px;
+animation: fadeIn 2s ease-in-out;
 }
 
 #confirmacao button {
-  font-size: 20px;
-  padding: 12px 32px;
-  background: transparent;
-  border: 2px solid #fff;
-  color: #fff;
-  border-radius: 30px;
-  cursor: pointer;
-  transition: 0.4s ease;
+font-size: 20px;
+padding: 12px 32px;
+background: transparent;
+border: 2px solid #fff;
+color: #fff;
+border-radius: 30px;
+cursor: pointer;
+transition: 0.4s ease;
 }
 
 #confirmacao button:hover {
-  background: #fff;
-  color: #000;
-  box-shadow: 0 0 15px rgba(255,255,255,0.3);
+background: #fff;
+color: #000;
+box-shadow: 0 0 15px rgba(255,255,255,0.3);
 }
 
 #site {
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  padding: 40px 20px;
-  animation: fadeIn 1s ease forwards;
+display: none;
+flex-direction: column;
+align-items: center;
+padding: 40px 20px;
+animation: fadeIn 1s ease forwards;
 }
 
 .container {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 2rem;
+display: flex;
+justify-content: center;
+margin-bottom: 2rem;
 }
 
 .card {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
-  padding: 25px;
-  width: 320px;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
-  text-align: center;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  transform-style: preserve-3d;
+background: rgba(255, 255, 255, 0.05);
+backdrop-filter: blur(10px);
+border-radius: 20px;
+padding: 25px;
+width: 320px;
+box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+text-align: center;
+border: 1px solid rgba(255, 255, 255, 0.1);
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+transform-style: preserve-3d;
 }
 
 .card:hover {
-  transform: perspective(800px) rotateY(4deg) rotateX(4deg);
-  box-shadow: 0 0 30px rgba(255,255,255,0.2);
+transform: perspective(800px) rotateY(4deg) rotateX(4deg);
+box-shadow: 0 0 30px rgba(255,255,255,0.2);
 }
 
 .card img {
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 20px;
-  filter: brightness(0.85);
+width: 140px;
+height: 140px;
+border-radius: 50%;
+object-fit: cover;
+margin-bottom: 20px;
+filter: brightness(0.85);
 }
 
 .card h2 {
-  font-size: 22px;
-  margin-bottom: 10px;
-  color: #fff;
-  text-shadow: 0 0 6px rgba(255,255,255,0.2);
+font-size: 22px;
+margin-bottom: 10px;
+color: #fff;
+text-shadow: 0 0 6px rgba(255,255,255,0.2);
 }
 
 .card p {
-  font-size: 14px;
-  color: #ccc;
-  line-height: 1.6;
+font-size: 14px;
+color: #ccc;
+line-height: 1.6;
+}
+
+.embed {
+margin-top: 2.5rem;
 }
 
 footer {
-  margin-top: 20px;
-  font-size: 13px;
-  color: #777;
-  text-align: center;
+margin-top: 20px;
+font-size: 13px;
+color: #777;
+text-align: center;
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.vinil {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  background: radial-gradient(circle at center, #111 30%, #000 70%, #222 100%);
-  border: 6px solid #000;
-  position: relative;
-  margin-top: 2.5rem;
-  box-shadow: 
-    0 0 25px rgba(255, 255, 255, 0.05),
-    0 0 8px rgba(255, 255, 255, 0.1) inset;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.vinil::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 12px;
-  height: 12px;
-  background: #555;
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.disco-interno {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  animation: girar 3s linear infinite;
-}
-
-@keyframes girar {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
+from { opacity: 0; transform: translateY(20px); }
+to { opacity: 1; transform: translateY(0); }
+  
