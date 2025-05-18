@@ -1,131 +1,47 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  user-select: none;
-}
-
-body, html {
-  height: 100%;
-  background: #0f0f0f;
-  color: #ffffff;
-  font-family: 'Segoe UI', Arial, sans-serif;
-}
-
-#confirmacao {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #000000;
-}
-
-#confirmacao button {
-  font-size: 20px;
-  padding: 12px 32px;
-  background: transparent;
-  border: 2px solid #fff;
-  color: #fff;
-  border-radius: 30px;
-  cursor: pointer;
-  transition: 0.4s;
-}
-
-#confirmacao button:hover {
-  background: #fff;
-  color: #000;
-  box-shadow: 0 0 15px rgba(255,255,255,0.3);
-}
-
-#site {
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  padding: 40px 20px;
-  background: #0f0f0f;
-  overflow: hidden;
-  position: relative;
-}
-
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .card {
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
   border-radius: 20px;
   padding: 20px;
   width: 320px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
   text-align: center;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: transform 0.5s ease, box-shadow 0.5s ease, border-radius 0.5s ease;
+  transition: all 0.5s ease;
+  transform-style: preserve-3d;
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
-  box-shadow:
-    0 0 10px rgba(255, 255, 255, 0.2),
-    0 0 20px rgba(255, 255, 255, 0.1) inset;
-  cursor: pointer;
 }
 
-.card.entortado {
-  transform: perspective(1000px) rotateY(6deg) rotateX(-6deg) scale(1.07) translateY(-8px);
-  border-radius: 32px;
-  box-shadow:
-    0 0 48px rgba(255, 255, 255, 0.7),
-    0 0 22px rgba(255, 255, 255, 0.4) inset;
+.card:hover {
+  transform: perspective(800px) scale(1.02) rotateY(5deg) rotateX(5deg);
+  box-shadow: 0 0 40px rgba(255,255,255,0.3);
+  border-radius: 30px;
 }
 
-.card img.perfil {
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 20px;
-  filter: brightness(0.85);
-  transition: transform 0.4s ease, box-shadow 0.5s ease;
-  box-shadow: 0 0 12px rgba(255, 255, 255, 0.5);
+.corner {
+  position: absolute;
+  font-size: 10px;
+  color: #aaa;
 }
 
-.card img.perfil.girar {
-  transform: rotate(180deg);
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
-}
+.topleft { top: 6px; left: 8px; }
+.topright { top: 6px; right: 8px; }
+.bottomleft { bottom: 6px; left: 8px; }
+.bottomright { bottom: 6px; right: 8px; }
 
 .card h2 {
   font-size: 22px;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   color: #fff;
   text-shadow: 0 0 6px rgba(255,255,255,0.2);
 }
 
-.card .texto {
-  font-size: 15px;
+.card p {
+  font-size: 14px;
   color: #ccc;
-  margin-bottom: 5px;
-}
-
-.card .emote {
-  font-size: 16px;
-  color: #aaa;
-  margin-bottom: 15px;
-}
-
-.embed iframe {
-  height: 80px;
-  width: 100%;
-  border-radius: 12px;
-}
-
-footer {
-  margin-top: 20px;
-  font-size: 13px;
-  color: #777;
-  text-align: center;
+  line-height: 1.4;
+  margin-bottom: 10px;
 }
