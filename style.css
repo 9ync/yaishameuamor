@@ -46,6 +46,7 @@ body, html {
   padding: 40px 20px;
   background: #0f0f0f;
   overflow: hidden;
+  position: relative;
 }
 
 .container {
@@ -70,6 +71,7 @@ body, html {
   box-shadow:
     0 0 10px rgba(255, 255, 255, 0.2),
     0 0 20px rgba(255, 255, 255, 0.1) inset;
+  cursor: pointer;
 }
 
 .card:hover {
@@ -81,11 +83,19 @@ body, html {
 }
 
 .card.clicado {
-  transform: perspective(1000px) rotateX(15deg) rotateZ(-7deg) scale(1.08) translateY(-14px);
+  transform: perspective(1000px) rotateX(12deg) rotateZ(-4deg) scale(1.07) translateY(-14px);
   border-radius: 32px;
   box-shadow:
     0 0 40px rgba(255, 255, 255, 0.6),
     0 0 20px rgba(255, 255, 255, 0.3) inset;
+}
+
+.card.clicado.entortado {
+  transform: perspective(1000px) rotateY(7deg) rotateX(-7deg) scale(1.08) translateY(-8px);
+  border-radius: 32px;
+  box-shadow:
+    0 0 48px rgba(255, 255, 255, 0.7),
+    0 0 22px rgba(255, 255, 255, 0.4) inset;
 }
 
 .card img.perfil {
@@ -95,13 +105,18 @@ body, html {
   object-fit: cover;
   margin-bottom: 20px;
   filter: brightness(0.85);
-  transition: transform 0.6s ease;
-  box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
+}
+
+.card.clicado img.perfil {
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
 }
 
 .card img.perfil.girar {
-  transform: rotate(360deg);
-  box-shadow: 0 0 16px rgba(255, 255, 255, 0.6);
+  transform: rotate(15deg);
+  box-shadow: 0 0 18px rgba(255, 255, 255, 0.8);
 }
 
 .card h2 {
@@ -154,7 +169,6 @@ footer {
   50% { opacity: 0.4; text-shadow: 0 0 14px rgba(255, 255, 255, 0.9); }
 }
 
-/* Corações flutuantes */
 .hearts-container {
   position: absolute;
   width: 100%;
@@ -188,4 +202,4 @@ footer {
     transform: translateY(-200px) scale(1.4);
     opacity: 0;
   }
-      }
+}
