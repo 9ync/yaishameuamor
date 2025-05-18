@@ -60,6 +60,7 @@ body, html {
 }
 
 .card {
+  position: relative;
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
   border-radius: 20px;
@@ -68,7 +69,7 @@ body, html {
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
   text-align: center;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.6s ease, box-shadow 0.6s ease, border-radius 0.6s ease;
   transform-style: preserve-3d;
   display: flex;
   flex-direction: column;
@@ -76,8 +77,9 @@ body, html {
 }
 
 .card:hover {
-  transform: perspective(800px) rotateY(4deg) rotateX(4deg);
-  box-shadow: 0 0 30px rgba(255,255,255,0.2);
+  transform: perspective(800px) scale(1.02) rotateY(6deg) rotateX(6deg);
+  box-shadow: 0 0 40px rgba(255,255,255,0.2);
+  border-radius: 30px;
 }
 
 .card img {
@@ -90,7 +92,7 @@ body, html {
 }
 
 .card h2 {
-  font-size: 22px;
+  font-size: 20px;
   margin-bottom: 10px;
   color: #fff;
   text-shadow: 0 0 6px rgba(255,255,255,0.2);
@@ -100,7 +102,7 @@ body, html {
   font-size: 14px;
   color: #ccc;
   line-height: 1.4;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .embed {
@@ -113,6 +115,32 @@ body, html {
   width: 100%;
   border-radius: 12px;
   margin-bottom: 0;
+}
+
+.corner {
+  position: absolute;
+  font-size: 12px;
+  color: #fff;
+}
+
+.top-left {
+  top: 8px;
+  left: 10px;
+}
+
+.top-right {
+  top: 8px;
+  right: 10px;
+}
+
+.bottom-left {
+  bottom: 8px;
+  left: 10px;
+}
+
+.bottom-right {
+  bottom: 8px;
+  right: 10px;
 }
 
 footer {
