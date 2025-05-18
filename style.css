@@ -3,8 +3,6 @@
   margin: 0;
   padding: 0;
   user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
 }
 
 body, html {
@@ -18,11 +16,9 @@ body, html {
 #confirmacao {
   height: 100vh;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #000000;
-  text-align: center;
+  background: #000;
 }
 
 #confirmacao button {
@@ -69,26 +65,37 @@ body, html {
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
   text-align: center;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: transform 0.6s ease, box-shadow 0.6s ease, border-radius 0.6s ease;
-  transform-style: preserve-3d;
+  transition: all 0.6s ease;
   display: flex;
   flex-direction: column;
   align-items: center;
+  transform-style: preserve-3d;
 }
 
 .card:hover {
-  transform: perspective(800px) scale(1.02) rotateY(6deg) rotateX(6deg);
-  box-shadow: 0 0 40px rgba(255,255,255,0.2);
+  transform: perspective(800px) rotateX(-8deg) scale(1.05);
+  box-shadow: 0 0 30px rgba(255,255,255,0.3);
   border-radius: 30px;
 }
 
-.card img {
+.card.clicado {
+  transform: perspective(800px) rotateX(-12deg) scale(1.08);
+}
+
+.card img.perfil {
   width: 140px;
   height: 140px;
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 20px;
   filter: brightness(0.85);
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.card.clicado img.perfil {
+  transform: rotate(15deg);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.8);
 }
 
 .card h2 {
@@ -114,34 +121,20 @@ body, html {
   height: 80px;
   width: 100%;
   border-radius: 12px;
-  margin-bottom: 0;
 }
 
 .corner {
   position: absolute;
   font-size: 12px;
   color: #fff;
+  animation: piscarLuz 3s infinite ease-in-out;
+  text-shadow: 0 0 4px rgba(255,255,255,0.4);
 }
 
-.top-left {
-  top: 8px;
-  left: 10px;
-}
-
-.top-right {
-  top: 8px;
-  right: 10px;
-}
-
-.bottom-left {
-  bottom: 8px;
-  left: 10px;
-}
-
-.bottom-right {
-  bottom: 8px;
-  right: 10px;
-}
+.top-left    { top: 8px; left: 10px; }
+.top-right   { top: 8px; right: 10px; }
+.bottom-left { bottom: 8px; left: 10px; }
+.bottom-right{ bottom: 8px; right: 10px; }
 
 footer {
   margin-top: 20px;
@@ -152,5 +145,10 @@ footer {
 
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes piscarLuz {
+  0%, 100% { text-shadow: 0 0 10px rgba(255,255,255,0.8); }
+  50%      { text-shadow: 0 0 25px rgba(255,255,255,1); }
 }
