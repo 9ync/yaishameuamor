@@ -3,8 +3,6 @@
   margin: 0;
   padding: 0;
   user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
 }
 
 body, html {
@@ -12,17 +10,14 @@ body, html {
   background: #0f0f0f;
   color: #ffffff;
   font-family: 'Segoe UI', Arial, sans-serif;
-  scroll-behavior: smooth;
 }
 
 #confirmacao {
   height: 100vh;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   background: #000000;
-  text-align: center;
 }
 
 #confirmacao button {
@@ -33,7 +28,7 @@ body, html {
   color: #fff;
   border-radius: 30px;
   cursor: pointer;
-  transition: 0.4s ease;
+  transition: 0.4s;
 }
 
 #confirmacao button:hover {
@@ -49,16 +44,14 @@ body, html {
   justify-content: center;
   min-height: 100vh;
   padding: 40px 20px;
-  animation: fadeIn 1s ease forwards;
   background: #0f0f0f;
+  overflow: hidden;
 }
 
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
-  z-index: 1;
 }
 
 .card {
@@ -67,26 +60,32 @@ body, html {
   border-radius: 20px;
   padding: 20px;
   width: 320px;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
   text-align: center;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: transform 0.4s ease, box-shadow 0.4s ease, border-radius 0.4s ease;
+  transition: transform 0.5s ease, box-shadow 0.5s ease, border-radius 0.5s ease;
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
+  box-shadow:
+    0 0 10px rgba(255, 255, 255, 0.2),
+    0 0 20px rgba(255, 255, 255, 0.1) inset;
 }
 
 .card:hover {
-  transform: perspective(800px) rotateX(6deg) scale(1.03);
-  border-radius: 30px;
-  box-shadow: 0 0 30px rgba(255,255,255,0.2);
+  transform: perspective(800px) rotateX(10deg) rotateZ(-4deg) scale(1.05) translateY(-10px);
+  border-radius: 28px;
+  box-shadow:
+    0 0 25px rgba(255, 255, 255, 0.4),
+    0 0 10px rgba(255, 255, 255, 0.2) inset;
 }
 
 .card.clicado {
-  transform: perspective(800px) rotateX(12deg) scale(1.05);
-  border-radius: 40px;
-  box-shadow: 0 0 40px rgba(255,255,255,0.3);
+  transform: perspective(1000px) rotateX(15deg) rotateZ(-7deg) scale(1.08) translateY(-14px);
+  border-radius: 32px;
+  box-shadow:
+    0 0 40px rgba(255, 255, 255, 0.6),
+    0 0 20px rgba(255, 255, 255, 0.3) inset;
 }
 
 .card img.perfil {
@@ -95,14 +94,14 @@ body, html {
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 20px;
-  border: 2px solid rgba(255,255,255,0.4);
-  box-shadow: 0 0 10px rgba(255,255,255,0.3);
-  transition: transform 0.6s ease, box-shadow 0.3s ease;
+  filter: brightness(0.85);
+  transition: transform 0.6s ease;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
 }
 
 .card img.perfil.girar {
-  transform: rotate(15deg);
-  box-shadow: 0 0 20px rgba(255,255,255,0.7);
+  transform: rotate(360deg);
+  box-shadow: 0 0 16px rgba(255, 255, 255, 0.6);
 }
 
 .card h2 {
@@ -112,53 +111,22 @@ body, html {
   text-shadow: 0 0 6px rgba(255,255,255,0.2);
 }
 
-.card p {
-  font-size: 14px;
+.card .texto {
+  font-size: 15px;
   color: #ccc;
-  line-height: 1.4;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
-.embed {
+.card .emote {
+  font-size: 16px;
+  color: #aaa;
+  margin-bottom: 15px;
+}
+
+.embed iframe {
+  height: 80px;
   width: 100%;
-}
-
-.corner {
-  position: absolute;
-  font-size: 12px;
-  color: #fff;
-  animation: pulse 3s infinite ease-in-out;
-}
-
-.top-left {
-  top: 8px;
-  left: 10px;
-}
-
-.top-right {
-  top: 8px;
-  right: 10px;
-}
-
-.bottom-left {
-  bottom: 8px;
-  left: 10px;
-}
-
-.bottom-right {
-  bottom: 8px;
-  right: 10px;
-}
-
-@keyframes pulse {
-  0%, 100% {
-    opacity: 0.3;
-    text-shadow: 0 0 2px #fff;
-  }
-  50% {
-    opacity: 1;
-    text-shadow: 0 0 8px #fff;
-  }
+  border-radius: 12px;
 }
 
 footer {
@@ -166,12 +134,29 @@ footer {
   font-size: 13px;
   color: #777;
   text-align: center;
-  z-index: 1;
 }
 
-.heart-container {
+.corner {
   position: absolute;
-  bottom: 0;
+  font-size: 12px;
+  color: #fff;
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.2);
+  animation: blink 3s infinite ease-in-out;
+}
+
+.top-left { top: 6px; left: 10px; }
+.top-right { top: 6px; right: 10px; }
+.bottom-left { bottom: 6px; left: 10px; }
+.bottom-right { bottom: 6px; right: 10px; }
+
+@keyframes blink {
+  0%, 100% { opacity: 1; text-shadow: 0 0 8px rgba(255, 255, 255, 0.5); }
+  50% { opacity: 0.4; text-shadow: 0 0 14px rgba(255, 255, 255, 0.9); }
+}
+
+/* Corações flutuantes */
+.hearts-container {
+  position: absolute;
   width: 100%;
   height: 100%;
   pointer-events: none;
@@ -179,37 +164,28 @@ footer {
   z-index: 0;
 }
 
-.floating-heart {
+.float-heart {
   position: absolute;
-  bottom: 0;
+  bottom: -10px;
+  color: rgba(255, 255, 255, 0.6);
   font-size: 12px;
-  color: #fff;
+  animation: floatUp linear forwards;
   opacity: 0;
-  animation: subirBrilhar ease-in-out forwards;
-  text-shadow: 0 0 4px rgba(255,255,255,0.2);
 }
 
-@keyframes subirBrilhar {
+@keyframes floatUp {
   0% {
-    transform: translateY(0);
     opacity: 0;
+    transform: translateY(0) scale(1);
   }
-  10% {
-    opacity: 0.6;
-  }
-  50% {
+  20% {
     opacity: 1;
   }
-  90% {
-    opacity: 0.4;
+  80% {
+    opacity: 1;
   }
   100% {
-    transform: translateY(-250px);
+    transform: translateY(-200px) scale(1.4);
     opacity: 0;
   }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
+      }
