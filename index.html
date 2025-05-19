@@ -36,20 +36,19 @@
     function mostrarSite() {
       document.getElementById('confirmacao').style.display = 'none';
       document.getElementById('site').style.display = 'flex';
-
       const audio = new Audio('musica.mp3');
       audio.loop = true;
       audio.play();
     }
 
     function animarCard(card) {
-      document.querySelectorAll('.card.clicado').forEach(c => c.classList.remove('clicado'));
       card.classList.add('clicado');
     }
 
-    document.addEventListener('click', function(e) {
-      if (!e.target.closest('.card')) {
-        document.querySelectorAll('.card.clicado').forEach(c => c.classList.remove('clicado'));
+    document.addEventListener('click', function (e) {
+      const card = document.querySelector('.card');
+      if (!card.contains(e.target)) {
+        card.classList.remove('clicado');
       }
     });
   </script>
