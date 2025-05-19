@@ -73,13 +73,13 @@ body, html {
 }
 
 .card:hover {
-  transform: perspective(800px) rotateY(8deg) scale(1.05);
+  transform: perspective(800px) rotateY(-6deg) scale(1.05);
   box-shadow: 0 0 30px rgba(255,255,255,0.3);
   border-radius: 30px;
 }
 
 .card.clicado {
-  transform: perspective(800px) rotateY(-10deg) scale(1.08);
+  transform: perspective(800px) rotateY(-12deg) scale(1.08);
 }
 
 .card img.perfil {
