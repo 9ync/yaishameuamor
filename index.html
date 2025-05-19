@@ -10,6 +10,7 @@
   <div id="confirmacao">
     <button onclick="mostrarSite()">luv</button>
   </div>
+
   <div id="site">
     <div class="container">
       <div class="card" onclick="animarCard(this)">
@@ -25,10 +26,12 @@
         <span class="corner bottom-right">♡</span>
       </div>
     </div>
+
     <footer>
       <p>♡</p>
     </footer>
   </div>
+
   <script>
     function mostrarSite() {
       document.getElementById('confirmacao').style.display = 'none';
@@ -40,11 +43,15 @@
     }
 
     function animarCard(card) {
+      document.querySelectorAll('.card.clicado').forEach(c => c.classList.remove('clicado'));
       card.classList.add('clicado');
-      setTimeout(() => {
-        card.classList.remove('clicado');
-      }, 600);
     }
+
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('.card')) {
+        document.querySelectorAll('.card.clicado').forEach(c => c.classList.remove('clicado'));
+      }
+    });
   </script>
 </body>
 </html>
