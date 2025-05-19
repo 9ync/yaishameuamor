@@ -79,7 +79,7 @@ body, html {
 }
 
 .card.clicado {
-  transform: perspective(800px) rotateX(-12deg) scale(1.08);
+  transform: perspective(800px) rotateY(-10deg) scale(1.08);
 }
 
 .card img.perfil {
