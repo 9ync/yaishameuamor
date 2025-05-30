@@ -52,8 +52,6 @@
     }
 
     function animarCard(card) {
-      const allCards = document.querySelectorAll('.card');
-      allCards.forEach(c => c.classList.remove('clicado'));
       card.classList.add('clicado');
     }
 
@@ -69,13 +67,17 @@
     function iniciarContador() {
       const inicio = new Date("2025-05-16T00:00:00");
       const agora = new Date();
-      let diff = agora - inicio;
-      if (diff < 0) diff = 0;
-      const horas = Math.floor(diff / 3600000);
-      const minutos = Math.floor((diff % 3600000) / 60000);
-      const segundos = Math.floor((diff % 60000) / 1000);
+      const diff = agora - inicio;
+
+      const anos = Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
+      const meses = Math.floor((diff % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24 * 30));
+      const dias = Math.floor((diff % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
+      const horas = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutos = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const segundos = Math.floor((diff % (1000 * 60)) / 1000);
+
       const timer = document.getElementById("timer");
-      timer.textContent = `${horas}h ${minutos}m ${segundos}s`;
+      timer.textContent = `${anos}a ${meses}m ${dias}d ${horas}h ${minutos}m ${segundos}s`;
     }
 
     setInterval(iniciarContador, 1000);
