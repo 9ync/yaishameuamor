@@ -66,12 +66,25 @@
     function iniciarContador() {
       const inicio = new Date("2025-05-16T00:00:00");
       const agora = new Date();
-      const diff = agora - inicio;
-      const horas = Math.floor(diff / 3600000);
-      const minutos = Math.floor((diff % 3600000) / 60000);
-      const segundos = Math.floor((diff % 60000) / 1000);
-      const timer = document.getElementById("timer");
-      timer.textContent = `${horas}h ${minutos}m ${segundos}s`;
+      let anos = agora.getFullYear() - inicio.getFullYear();
+      let meses = agora.getMonth() - inicio.getMonth();
+      let dias = agora.getDate() - inicio.getDate();
+      let horas = agora.getHours() - inicio.getHours();
+      let minutos = agora.getMinutes() - inicio.getMinutes();
+      let segundos = agora.getSeconds() - inicio.getSeconds();
+
+      if (segundos < 0) { segundos += 60; minutos--; }
+      if (minutos < 0) { minutos += 60; horas--; }
+      if (horas < 0) { horas += 24; dias--; }
+      if (dias < 0) { 
+        meses--; 
+        const diasNoMesAnterior = new Date(agora.getFullYear(), agora.getMonth(), 0).getDate();
+        dias += diasNoMesAnterior;
+      }
+      if (meses < 0) { meses += 12; anos--; }
+
+      const texto = `${anos}a ${meses}m ${dias}d ${horas}h ${minutos}m ${segundos}s`;
+      document.getElementById("timer").textContent = texto;
     }
 
     setInterval(iniciarContador, 1000);
