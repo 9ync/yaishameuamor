@@ -21,16 +21,14 @@
     <div class="container">
       <div class="card" onclick="animarCard(this)">
         <img src="yaisha.jpg" alt="Yaisha" class="perfil" />
-        <h2>minha garota ♡ ...</h2>
+        <h2 class="titulo-card">minha garota ♡ ...</h2>
         <p>eu amo ela !</p>
-        <div class="embed">
-          <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/6jgkEbmQ2F2onEqsEhiliL?utm_source=generator" width="100%" height="80" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-        </div>
+        <a class="clique-texto" href="https://open.spotify.com/embed/track/6jgkEbmQ2F2onEqsEhiliL?utm_source=generator" target="_blank">✧⁠*⁠。clique aqui  ° ✧⁠*</a>
       </div>
 
       <div class="card" onclick="animarCard(this)">
         <img src="p&y.jpg" alt="Us" class="perfil" />
-        <h2>us</h2>
+        <h2 class="titulo-card">us</h2>
         <p id="timer" class="timer"></p>
         <a href="https://open.spotify.com/playlist/7D2nPC3Psiiha3Tji7Zti0?si=EwDyxB1HQfa1CgkVl91eFQ" target="_blank" class="clique-texto">✧⁠*⁠。clique aqui  ° ✧⁠*</a>
       </div>
@@ -52,8 +50,6 @@
 
     function animarCard(card) {
       card.classList.add('clicado');
-      const texto = card.querySelector('.clique-texto');
-      if (texto) texto.classList.add('animado');
     }
 
     document.addEventListener('click', function (e) {
@@ -61,8 +57,6 @@
       cards.forEach(c => {
         if (!c.contains(e.target)) {
           c.classList.remove('clicado');
-          const texto = c.querySelector('.clique-texto');
-          if (texto) texto.classList.remove('animado');
         }
       });
     });
@@ -71,21 +65,18 @@
       const inicio = new Date("2025-05-16T00:00:00");
       const agora = new Date();
       const diff = agora - inicio;
-
       const anos = Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
       const meses = Math.floor((diff % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24 * 30));
       const dias = Math.floor((diff % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
       const horas = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       const minutos = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
       const segundos = Math.floor((diff % (1000 * 60)) / 1000);
-
-      let texto = '';
-      if (anos > 0) texto += `${anos}a `;
-      if (meses > 0 || texto) texto += `${meses}m `;
-      if (dias > 0 || texto) texto += `${dias}d `;
-      texto += `${horas}h ${minutos}m ${segundos}s`;
-
-      document.getElementById("timer").textContent = texto.trim();
+      let resultado = "";
+      if (anos > 0) resultado += `${anos}a `;
+      if (meses > 0) resultado += `${meses}m `;
+      if (dias > 0) resultado += `${dias}d `;
+      resultado += `${horas}h ${minutos}m ${segundos}s`;
+      document.getElementById("timer").textContent = resultado;
     }
 
     setInterval(iniciarContador, 1000);
