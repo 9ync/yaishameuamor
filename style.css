@@ -9,7 +9,7 @@ body, html {
   height: 100%;
   background: #0f0f0f;
   color: #ffffff;
-  font-family: 'Segoe UI', Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
   scroll-behavior: smooth;
 }
 
@@ -116,30 +116,38 @@ body, html {
   font-weight: 300;
 }
 
-.clique-texto {
+.timer {
   animation: brilho 3s infinite ease-in-out;
-  display: inline-block;
+}
+
+.clique-texto {
   position: relative;
   text-decoration: none;
   color: #ccc;
-  cursor: pointer;
-  overflow: hidden;
   font-weight: 300;
+  display: inline-block;
+  overflow: hidden;
   margin-top: 6px;
+  transition: color 0.3s ease;
 }
 
 .clique-texto::after {
-  content: "____________________________";
+  content: "________________________";
   position: absolute;
-  left: 0;
   bottom: -5px;
+  left: 0;
   color: #ccc;
-  transition: transform 0.4s ease;
-  transform: translateX(0);
+  transform: scaleX(1);
+  transform-origin: left center;
+  transition: transform 0.5s ease;
 }
 
-.clique-texto.animado::after {
-  transform: translateX(15%);
+.card.clicado .clique-texto::after {
+  transform: scaleX(1.4);
+}
+
+.card.clicado .clique-texto {
+  color: #fff;
 }
 
 footer {
