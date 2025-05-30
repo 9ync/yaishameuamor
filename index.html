@@ -22,16 +22,16 @@
         <img src="yaisha.jpg" alt="Yaisha" class="perfil" />
         <h2>minha garota ♡ ...</h2>
         <p>eu amo ela !</p>
+        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4rXLjWdF2ZZpXCVTfWcshS?utm_source=generator" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
       </div>
 
-      <div class="card" onclick="animarCard(this); animarClique();">
+      <div class="card" id="card2">
         <img src="p&y.jpg" alt="Us" class="perfil" />
         <h2>us</h2>
         <p id="timer" class="timer"></p>
         <a href="#" id="cliqueTexto" class="clique-texto" onclick="animarClique(event)">✧⁠*⁠。clique aqui  ° ✧⁠*</a>
       </div>
     </div>
-
     <footer>
       <p>♡</p>
     </footer>
@@ -92,15 +92,13 @@
     setInterval(iniciarContador, 1000);
 
     function animarClique(event) {
-      if (event) event.preventDefault();
+      event.preventDefault();
 
       const texto = document.getElementById("cliqueTexto");
-      texto.classList.add("animado");
+      const card = document.getElementById("card2");
 
-      const card = texto.closest(".card");
-      if (!card.classList.contains("clicado")) {
-        card.classList.add("clicado");
-      }
+      texto.classList.add("animado");
+      card.classList.add("clicado");
 
       setTimeout(() => {
         window.location.href = "https://open.spotify.com/playlist/7D2nPC3Psiiha3Tji7Zti0?si=EwDyxB1HQfa1CgkVl91eFQ";
