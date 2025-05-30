@@ -53,7 +53,7 @@ body, html {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 40px;
+  gap: 20px;
   flex-wrap: wrap;
 }
 
@@ -105,26 +105,42 @@ body, html {
   margin-bottom: 10px;
   color: #fff;
   text-shadow: 0 0 6px rgba(255,255,255,0.2);
+  font-weight: 300;
 }
 
-.card p, .timer, .clique-texto {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 300;
+.card p {
   font-size: 14px;
   color: #ccc;
   line-height: 1.4;
   margin-bottom: 12px;
+  font-weight: 300;
 }
 
-.embed {
-  margin: 0;
-  width: 100%;
+.clique-texto {
+  animation: brilho 3s infinite ease-in-out;
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  color: #ccc;
+  cursor: pointer;
+  overflow: hidden;
+  font-weight: 300;
 }
 
-.embed iframe {
-  height: 80px;
+.clique-texto::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
   width: 100%;
-  border-radius: 12px;
+  height: 1px;
+  background: #ccc;
+  transition: transform 0.4s ease;
+  transform: translateX(0);
+}
+
+.clique-texto.animado::after {
+  transform: translateX(15%);
 }
 
 .corner {
@@ -158,23 +174,6 @@ footer {
 }
 
 @keyframes brilho {
-  0%, 100% { text-shadow: 0 0 10px rgba(255, 255, 255, 0.8); }
-  50% { text-shadow: 0 0 20px rgba(255, 255, 255, 1); }
-}
-
-.clique-texto {
-  animation: brilho 3s infinite ease-in-out;
-  display: inline-block;
-  position: relative;
-  text-decoration: none;
-}
-
-.clique-texto::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -3px;
-  width: 100%;
-  height: 1px;
-  background: #ccc;
-}
+  0%, 100% { text-shadow: 0 0 6px rgba(255,255,255,0.5); }
+  50% { text-shadow: 0 0 14px rgba(255,255,255,1); }
+  }
