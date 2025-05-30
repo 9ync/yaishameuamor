@@ -11,7 +11,7 @@ body, html {
   color: #ffffff;
   font-family: 'Roboto', sans-serif;
   scroll-behavior: smooth;
-  animation: brilhoTexto 6s ease-in-out infinite alternate;
+  animation: brilhoAscendente 3s infinite ease-in-out;
 }
 
 #confirmacao {
@@ -73,6 +73,7 @@ body, html {
   flex-direction: column;
   align-items: center;
   transform-style: preserve-3d;
+  overflow: hidden;
 }
 
 .card:hover {
@@ -101,18 +102,21 @@ body, html {
   box-shadow: 0 0 25px rgba(255, 255, 255, 0.8);
 }
 
-.card h2, .card p {
-  font-weight: 300;
+.card h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
   color: #fff;
-  text-shadow: 0 0 8px rgba(255,255,255,0.1);
-  animation: brilhoTexto 6s infinite ease-in-out alternate;
+  text-shadow: 0 0 6px rgba(255,255,255,0.2);
+  font-weight: 300;
 }
 
-.timer {
-  animation: brilho 3s infinite ease-in-out;
+.card p {
   font-size: 14px;
   color: #ccc;
+  line-height: 1.4;
+  margin-bottom: 12px;
   font-weight: 300;
+  animation: brilhoAscendente 2.5s infinite ease-in-out;
 }
 
 .clique-texto {
@@ -121,21 +125,22 @@ body, html {
   color: #ccc;
   font-weight: 300;
   margin-top: 6px;
-  animation: brilho 2.5s infinite ease-in-out;
+  z-index: 2;
+  transition: color 0.3s;
+  animation: brilhoAscendente 2.5s infinite ease-in-out;
 }
 
 .barra {
-  content: "";
   display: block;
-  height: 1px;
+  height: 2px;
   background: #ccc;
   width: 0%;
-  margin-top: 5px;
-  transition: width 0.5s ease;
+  margin-top: 6px;
+  transition: width 0.4s ease;
 }
 
 .card.clicado .barra {
-  width: 80%;
+  width: 100%;
 }
 
 footer {
@@ -150,12 +155,8 @@ footer {
   to   { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes brilho {
-  0%, 100% { text-shadow: 0 0 6px rgba(255,255,255,0.3); }
-  50% { text-shadow: 0 0 14px rgba(255,255,255,0.9); }
+@keyframes brilhoAscendente {
+  0% { text-shadow: 0 0 3px #999; }
+  50% { text-shadow: 0 0 10px #fff; }
+  100% { text-shadow: 0 0 3px #999; }
 }
-
-@keyframes brilhoTexto {
-  0% { text-shadow: 0 0 4px rgba(255,255,255,0.15); }
-  100% { text-shadow: 0 0 10px rgba(255,255,255,0.35); }
-  }
