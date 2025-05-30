@@ -97,10 +97,10 @@ body, html {
 
 .card h2.titulo-card {
   font-size: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   color: #fff;
   font-weight: 300;
-  transform: rotate(2deg) translateX(5px);
+  transform: translateX(8px);
 }
 
 .listra {
@@ -108,10 +108,10 @@ body, html {
   width: 80px;
   background: white;
   opacity: 0;
-  margin-top: 5px;
   transition: all 0.4s ease;
   transform: scaleX(0);
   box-shadow: 0 0 6px rgba(255,255,255,0.3);
+  margin-bottom: 8px;
 }
 
 .titulo-listra {
@@ -132,9 +132,14 @@ body, html {
   animation: brilho 6s infinite ease-in-out;
 }
 
+.card:not(.clicado) .clique-listra {
+  display: none;
+}
+
 .clique-listra {
   align-self: flex-start;
   margin-top: 4px;
+  display: block;
 }
 
 footer {
@@ -147,4 +152,4 @@ footer {
 @keyframes brilho {
   0%, 100% { text-shadow: 0 0 2px rgba(255,255,255,0.1); }
   50% { text-shadow: 0 0 8px rgba(255,255,255,0.4); }
-}
+  }
