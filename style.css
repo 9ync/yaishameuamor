@@ -53,6 +53,8 @@ body, html {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .card {
@@ -99,7 +101,7 @@ body, html {
 }
 
 .card h2 {
-  font-size:20px;
+  font-size: 20px;
   margin-bottom: 10px;
   color: #fff;
   text-shadow: 0 0 6px rgba(255,255,255,0.2);
@@ -131,10 +133,10 @@ body, html {
   text-shadow: 0 0 4px rgba(255,255,255,0.4);
 }
 
-.top-left    { top: 8px; left: 10px; }
-.top-right   { top: 8px; right: 10px; }
+.top-left { top: 8px; left: 10px; }
+.top-right { top: 8px; right: 10px; }
 .bottom-left { bottom: 8px; left: 10px; }
-.bottom-right{ bottom: 8px; right: 10px; }
+.bottom-right { bottom: 8px; right: 10px; }
 
 footer {
   margin-top: 20px;
@@ -143,12 +145,19 @@ footer {
   text-align: center;
 }
 
+.timer {
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0 0 8px rgba(255,255,255,0.9);
+  animation: piscarLuz 2s infinite ease-in-out;
+}
+
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
-  to   { opacity: 1; transform: translateY(0); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes piscarLuz {
   0%, 100% { text-shadow: 0 0 10px rgba(255,255,255,0.8); }
-  50%      { text-shadow: 0 0 25px rgba(255,255,255,1); }
-}
+  50% { text-shadow: 0 0 25px rgba(255,255,255,1); }
+  }
