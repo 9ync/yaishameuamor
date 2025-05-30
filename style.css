@@ -11,7 +11,16 @@ body, html {
   color: #ffffff;
   font-family: 'Roboto', sans-serif;
   scroll-behavior: smooth;
-  animation: brilhoAscendente 3s infinite ease-in-out;
+  animation: glow-text 5s ease-in-out infinite;
+}
+
+@keyframes glow-text {
+  0%, 100% {
+    text-shadow: 0 0 3px #fff;
+  }
+  50% {
+    text-shadow: 0 0 7px #fff, 0 0 10px #aaa;
+  }
 }
 
 #confirmacao {
@@ -73,7 +82,6 @@ body, html {
   flex-direction: column;
   align-items: center;
   transform-style: preserve-3d;
-  overflow: hidden;
 }
 
 .card:hover {
@@ -106,7 +114,6 @@ body, html {
   font-size: 20px;
   margin-bottom: 10px;
   color: #fff;
-  text-shadow: 0 0 6px rgba(255,255,255,0.2);
   font-weight: 300;
 }
 
@@ -116,31 +123,35 @@ body, html {
   line-height: 1.4;
   margin-bottom: 12px;
   font-weight: 300;
-  animation: brilhoAscendente 2.5s infinite ease-in-out;
 }
 
 .clique-texto {
   position: relative;
-  text-decoration: none;
   color: #ccc;
+  cursor: pointer;
   font-weight: 300;
+  text-decoration: none;
   margin-top: 6px;
-  z-index: 2;
-  transition: color 0.3s;
-  animation: brilhoAscendente 2.5s infinite ease-in-out;
+  animation: glow-text 3s ease-in-out infinite;
+  display: inline-block;
+  padding-bottom: 4px;
 }
 
-.barra {
-  display: block;
+.clique-texto::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
   height: 2px;
-  background: #ccc;
-  width: 0%;
-  margin-top: 6px;
-  transition: width 0.4s ease;
+  width: 100%;
+  background-color: #ccc;
+  transform: scaleX(1);
+  transition: transform 0.4s ease;
+  transform-origin: left;
 }
 
-.card.clicado .barra {
-  width: 100%;
+.card.clicado .clique-texto::after {
+  transform: scaleX(1.5);
 }
 
 footer {
@@ -153,10 +164,4 @@ footer {
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to   { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes brilhoAscendente {
-  0% { text-shadow: 0 0 3px #999; }
-  50% { text-shadow: 0 0 10px #fff; }
-  100% { text-shadow: 0 0 3px #999; }
 }
