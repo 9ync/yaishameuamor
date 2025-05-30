@@ -3,7 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   user-select: none;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Roboto', sans-serif;
   animation: brilho 10s ease-in-out infinite;
 }
 
@@ -78,8 +78,7 @@ body, html {
   border-radius: 30px;
 }
 
-.card.clicado .titulo-listra,
-.card.clicado .clique-listra {
+.card.clicado .titulo-listra {
   opacity: 1;
   transform: scaleX(1);
 }
@@ -119,31 +118,6 @@ body, html {
   align-self: flex-end;
 }
 
-.clique-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 10px;
-  width: 100%;
-}
-
-.clique-texto {
-  color: #ccc;
-  font-weight: 300;
-  animation: brilho 10s infinite ease-in-out;
-  text-align: center;
-}
-
-.card:not(.clicado) .clique-listra {
-  display: none;
-}
-
-.clique-listra {
-  align-self: center;
-  margin-top: 4px;
-  display: block;
-}
-
 footer {
   margin-top: 20px;
   font-size: 13px;
@@ -154,4 +128,4 @@ footer {
 @keyframes brilho {
   0%, 100% { text-shadow: 0 0 1px rgba(255,255,255,0.1); }
   50% { text-shadow: 0 0 6px rgba(255,255,255,0.3); }
-  }
+    }
