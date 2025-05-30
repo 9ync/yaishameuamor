@@ -6,7 +6,6 @@
   <title>i luv my gf</title>
   <link rel="icon" href="https://i.postimg.cc/XJ8jyqNt/file-00000000e63c623085dc6adf67a51742.png" type="image/png" />
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
   <meta property="og:title" content="♡" />
   <meta property="og:description" content="16.05" />
   <meta property="og:url" content="https://yaisha.xyz" />
@@ -23,16 +22,13 @@
         <img src="yaisha.jpg" alt="Yaisha" class="perfil" />
         <h2>minha garota ♡ ...</h2>
         <p>eu amo ela !</p>
-        <div class="embed">
-          <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/6jgkEbmQ2F2onEqsEhiliL?utm_source=generator" width="100%" height="80" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-        </div>
       </div>
 
-      <div class="card" onclick="animarCard(this)">
+      <div class="card" onclick="animarCard(this); animarClique();">
         <img src="p&y.jpg" alt="Us" class="perfil" />
         <h2>us</h2>
         <p id="timer" class="timer"></p>
-        <a href="https://open.spotify.com/playlist/7D2nPC3Psiiha3Tji7Zti0?si=EwDyxB1HQfa1CgkVl91eFQ" target="_blank" class="clique-texto">✧⁠*⁠。clique aqui  ° ✧⁠*</a>
+        <a href="#" id="cliqueTexto" class="clique-texto" onclick="animarClique(event)">✧⁠*⁠。clique aqui  ° ✧⁠*</a>
       </div>
     </div>
 
@@ -66,6 +62,12 @@
     function iniciarContador() {
       const inicio = new Date("2025-05-16T00:00:00");
       const agora = new Date();
+
+      if (agora < inicio) {
+        document.getElementById("timer").textContent = "0a 0m 0d 0h 0m 0s";
+        return;
+      }
+
       let anos = agora.getFullYear() - inicio.getFullYear();
       let meses = agora.getMonth() - inicio.getMonth();
       let dias = agora.getDate() - inicio.getDate();
@@ -76,8 +78,8 @@
       if (segundos < 0) { segundos += 60; minutos--; }
       if (minutos < 0) { minutos += 60; horas--; }
       if (horas < 0) { horas += 24; dias--; }
-      if (dias < 0) { 
-        meses--; 
+      if (dias < 0) {
+        meses--;
         const diasNoMesAnterior = new Date(agora.getFullYear(), agora.getMonth(), 0).getDate();
         dias += diasNoMesAnterior;
       }
@@ -88,6 +90,22 @@
     }
 
     setInterval(iniciarContador, 1000);
+
+    function animarClique(event) {
+      if (event) event.preventDefault();
+
+      const texto = document.getElementById("cliqueTexto");
+      texto.classList.add("animado");
+
+      const card = texto.closest(".card");
+      if (!card.classList.contains("clicado")) {
+        card.classList.add("clicado");
+      }
+
+      setTimeout(() => {
+        window.location.href = "https://open.spotify.com/playlist/7D2nPC3Psiiha3Tji7Zti0?si=EwDyxB1HQfa1CgkVl91eFQ";
+      }, 1000);
+    }
   </script>
 </body>
 </html>
