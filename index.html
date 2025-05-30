@@ -32,8 +32,7 @@
         <img src="p&y.jpg" alt="Us" class="perfil" />
         <h2>us</h2>
         <p id="timer" class="timer"></p>
-        <a href="https://open.spotify.com/playlist/7D2nPC3Psiiha3Tji7Zti0?si=EwDyxB1HQfa1CgkVl91eFQ" target="_blank" class="clique-texto">✧⁠*⁠。clique aqui ° ✧⁠*</a>
-        <span class="barra"></span>
+        <a href="https://open.spotify.com/playlist/7D2nPC3Psiiha3Tji7Zti0?si=EwDyxB1HQfa1CgkVl91eFQ" target="_blank" class="clique-texto">✧⁠*⁠。clique aqui  ° ✧⁠*</a>
       </div>
     </div>
 
@@ -53,6 +52,8 @@
 
     function animarCard(card) {
       card.classList.add('clicado');
+      const texto = card.querySelector('.clique-texto');
+      if (texto) texto.classList.add('animado');
     }
 
     document.addEventListener('click', function (e) {
@@ -60,6 +61,8 @@
       cards.forEach(c => {
         if (!c.contains(e.target)) {
           c.classList.remove('clicado');
+          const texto = c.querySelector('.clique-texto');
+          if (texto) texto.classList.remove('animado');
         }
       });
     });
@@ -76,8 +79,13 @@
       const minutos = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
       const segundos = Math.floor((diff % (1000 * 60)) / 1000);
 
-      const timer = document.getElementById("timer");
-      timer.textContent = `${anos}a ${meses}m ${dias}d ${horas}h ${minutos}m ${segundos}s`;
+      let texto = '';
+      if (anos > 0) texto += `${anos}a `;
+      if (meses > 0 || texto) texto += `${meses}m `;
+      if (dias > 0 || texto) texto += `${dias}d `;
+      texto += `${horas}h ${minutos}m ${segundos}s`;
+
+      document.getElementById("timer").textContent = texto.trim();
     }
 
     setInterval(iniciarContador, 1000);
