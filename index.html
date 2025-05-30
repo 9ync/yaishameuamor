@@ -21,7 +21,16 @@
       <div class="card" onclick="animarCard(this)">
         <img src="yaisha.jpg" alt="Yaisha" class="perfil" />
         <h2>minha garota ♡ ...</h2>
-        <p>eu amo ela ! </p>
+        <p>eu amo ela !</p>
+        <div class="embed">
+          <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/6jgkEbmQ2F2onEqsEhiliL?utm_source=generator" width="100%" height="80" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+      </div>
+
+      <div class="card" onclick="animarCard(this)">
+        <img src="p&y.jpg" alt="us" class="perfil" />
+        <h2>us</h2>
+        <p id="contador" class="timer"></p>
         <div class="embed">
           <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/6jgkEbmQ2F2onEqsEhiliL?utm_source=generator" width="100%" height="80" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
         </div>
@@ -47,11 +56,36 @@
     }
 
     document.addEventListener('click', function (e) {
-      const card = document.querySelector('.card');
-      if (!card.contains(e.target)) {
-        card.classList.remove('clicado');
-      }
+      const cards = document.querySelectorAll('.card');
+      cards.forEach(c => {
+        if (!c.contains(e.target)) c.classList.remove('clicado');
+      });
     });
+
+    function atualizarContador() {
+      const inicio = new Date("2025-05-16T00:00:00");
+      const agora = new Date();
+      const diff = agora - inicio;
+
+      if (diff < 0) {
+        document.getElementById("contador").textContent = "00d 00h 00m 00s";
+        return;
+      }
+
+      const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const horas = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutos = Math.floor((diff / (1000 * 60)) % 60);
+      const segundos = Math.floor((diff / 1000) % 60);
+
+      document.getElementById("contador").textContent =
+        `${dias.toString().padStart(2, '0')}d ` +
+        `${horas.toString().padStart(2, '0')}h ` +
+        `${minutos.toString().padStart(2, '0')}m ` +
+        `${segundos.toString().padStart(2, '0')}s`;
+    }
+
+    setInterval(atualizarContador, 1000);
+    atualizarContador();
   </script>
 </body>
 </html>
