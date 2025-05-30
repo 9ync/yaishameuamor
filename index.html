@@ -6,6 +6,7 @@
   <title>i luv my gf</title>
   <link rel="icon" href="https://i.postimg.cc/XJ8jyqNt/file-00000000e63c623085dc6adf67a51742.png" type="image/png" />
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
   <meta property="og:title" content="♡" />
   <meta property="og:description" content="16.05" />
   <meta property="og:url" content="https://yaisha.xyz" />
@@ -28,10 +29,10 @@
       </div>
 
       <div class="card" onclick="animarCard(this)">
-        <img src="p&y.jpg" alt="us" class="perfil" />
+        <img src="p&y.jpg" alt="Us" class="perfil" />
         <h2>us</h2>
-        <p id="contador" class="timer"></p>
-        </div>
+        <p id="timer" class="timer"></p>
+        <a href="https://open.spotify.com/playlist/7D2nPC3Psiiha3Tji7Zti0?si=EwDyxB1HQfa1CgkVl91eFQ" target="_blank" class="clique-texto">✧⁠*⁠。clique aqui  ° ✧⁠*</a>
       </div>
     </div>
 
@@ -56,34 +57,24 @@
     document.addEventListener('click', function (e) {
       const cards = document.querySelectorAll('.card');
       cards.forEach(c => {
-        if (!c.contains(e.target)) c.classList.remove('clicado');
+        if (!c.contains(e.target)) {
+          c.classList.remove('clicado');
+        }
       });
     });
 
-    function atualizarContador() {
+    function iniciarContador() {
       const inicio = new Date("2025-05-16T00:00:00");
       const agora = new Date();
       const diff = agora - inicio;
-
-      if (diff < 0) {
-        document.getElementById("contador").textContent = "00d 00h 00m 00s";
-        return;
-      }
-
-      const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const horas = Math.floor((diff / (1000 * 60 * 60)) % 24);
-      const minutos = Math.floor((diff / (1000 * 60)) % 60);
-      const segundos = Math.floor((diff / 1000) % 60);
-
-      document.getElementById("contador").textContent =
-        `${dias.toString().padStart(2, '0')}d ` +
-        `${horas.toString().padStart(2, '0')}h ` +
-        `${minutos.toString().padStart(2, '0')}m ` +
-        `${segundos.toString().padStart(2, '0')}s`;
+      const horas = Math.floor(diff / 3600000);
+      const minutos = Math.floor((diff % 3600000) / 60000);
+      const segundos = Math.floor((diff % 60000) / 1000);
+      const timer = document.getElementById("timer");
+      timer.textContent = `${horas}h ${minutos}m ${segundos}s`;
     }
 
-    setInterval(atualizarContador, 1000);
-    atualizarContador();
+    setInterval(iniciarContador, 1000);
   </script>
 </body>
 </html>
