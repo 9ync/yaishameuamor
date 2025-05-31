@@ -4,14 +4,15 @@
   box-sizing: border-box;
   user-select: none;
   font-family: 'Roboto', sans-serif;
-  animation: brilho 10s ease-in-out infinite;
+  font-weight: 300;
+  color: white;
+  animation: brilhoLento 12s ease-in-out infinite;
+  text-shadow: 0 0 3px rgba(255,255,255,0.12);
 }
 
 body, html {
   height: 100%;
   background: #0f0f0f;
-  color: #ffffff;
-  text-shadow: 0 0 2px rgba(255,255,255,0.15);
 }
 
 #confirmacao {
@@ -104,8 +105,6 @@ body, html {
 .card h2.titulo-card {
   font-size: 20px;
   margin-bottom: 5px;
-  color: #fff;
-  font-weight: 300;
   transform: translateX(12px);
 }
 
@@ -127,7 +126,6 @@ body, html {
 footer {
   margin-top: 20px;
   font-size: 13px;
-  color: #777;
   text-align: center;
 }
 
@@ -136,11 +134,15 @@ footer {
   font-size: 13px;
   color: #ffffff;
   text-decoration: none;
+  animation: brilhoLento 12s ease-in-out infinite;
   text-shadow: 0 0 6px rgba(255,255,255,0.3);
-  animation: brilho 10s ease-in-out infinite;
 }
 
-@keyframes brilho {
-  0%, 100% { text-shadow: 0 0 1px rgba(255,255,255,0.08); }
-  50% { text-shadow: 0 0 6px rgba(255,255,255,0.2); }
-}
+@keyframes brilhoLento {
+  0%, 100% {
+    text-shadow: 0 0 2px rgba(255,255,255,0.1);
+  }
+  50% {
+    text-shadow: 0 0 8px rgba(255,255,255,0.2);
+  }
+  }
