@@ -13,7 +13,7 @@
     <button onclick="mostrarSite()">luv</button>
   </div>
 
-  <div id="site">
+  <div id="site" class="fade">
     <div class="container">
       <div class="card" onclick="animarCard(this)">
         <img src="yaisha.jpg" alt="Yaisha" class="perfil" />
@@ -28,6 +28,7 @@
         <h2 class="titulo-card">us</h2>
         <div class="listra titulo-listra"></div>
         <p id="timer" class="timer"></p>
+        <a href="https://open.spotify.com/playlist/7D2nPC3Psiiha3Tji7Zti0?si=XqGjlqRoRlya3joJLIsElg&pi=Yt4ZUyfdTKe_Y" target="_blank" class="link-special">( °✧*⁠。clique aqui   °✧⁠*⁠。)</a>
       </div>
     </div>
 
@@ -39,7 +40,9 @@
   <script>
     function mostrarSite() {
       document.getElementById('confirmacao').style.display = 'none';
-      document.getElementById('site').style.display = 'flex';
+      const site = document.getElementById('site');
+      site.style.display = 'flex';
+      site.classList.add('fade-in');
       const audio = new Audio('musica.mp3');
       audio.loop = true;
       audio.play();
