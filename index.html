@@ -6,29 +6,37 @@
   <title>i luv my gf</title>
   <link rel="icon" href="https://i.postimg.cc/XJ8jyqNt/file-00000000e63c623085dc6adf67a51742.png" type="image/png" />
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@200&display=swap" rel="stylesheet">
+  <meta property="og:title" content="♡" />
+  <meta property="og:description" content="16.05" />
+  <meta property="og:url" content="https://yaisha.xyz" />
+  <meta property="og:type" content="website" />
 </head>
 <body>
   <div id="confirmacao">
     <button onclick="mostrarSite()">luv</button>
   </div>
 
-  <div id="site" class="fade">
+  <div id="site">
     <div class="container">
       <div class="card" onclick="animarCard(this)">
         <img src="yaisha.jpg" alt="Yaisha" class="perfil" />
-        <h2 class="titulo-card">minha garota ♡ ...</h2>
-        <div class="listra titulo-listra"></div>
+        <h2 class="titulo">minha garota ♡</h2>
+        <div class="linha-titulo"></div>
         <p>eu amo ela !</p>
-        <iframe style="border-radius:12px; margin-top: 10px;" src="https://open.spotify.com/embed/track/6jgkEbmQ2F2onEqsEhiliL?utm_source=generator&theme=0" width="100%" height="80" frameBorder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; picture-in-picture" loading="lazy"></iframe>
+        <div class="embed">
+          <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/6jgkEbmQ2F2onEqsEhiliL?utm_source=generator" width="100%" height="80" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
       </div>
 
       <div class="card" onclick="animarCard(this)">
         <img src="p&y.jpg" alt="Us" class="perfil" />
-        <h2 class="titulo-card">us</h2>
-        <div class="listra titulo-listra"></div>
+        <h2 class="titulo">us</h2>
+        <div class="linha-titulo"></div>
         <p id="timer" class="timer"></p>
-        <a href="https://open.spotify.com/playlist/7D2nPC3Psiiha3Tji7Zti0?si=XqGjlqRoRlya3joJLIsElg&pi=Yt4ZUyfdTKe_Y" target="_blank" class="link-special">( °✧*⁠。clique aqui   °✧⁠*⁠。)</a>
+        <a href="https://open.spotify.com/playlist/7D2nPC3Psiiha3Tji7Zti0?si=XqGjlqRoRlya3joJLIsElg&pi=Yt4ZUyfdTKe_Y" class="link-special" target="_blank">
+          °✧*⁠。clique aqui   °✧⁠*⁠。
+        </a>
       </div>
     </div>
 
@@ -40,40 +48,49 @@
   <script>
     function mostrarSite() {
       document.getElementById('confirmacao').style.display = 'none';
-      const site = document.getElementById('site');
-      site.style.display = 'flex';
-      site.classList.add('fade-in');
+      document.getElementById('site').style.display = 'flex';
       const audio = new Audio('musica.mp3');
       audio.loop = true;
       audio.play();
     }
 
     function animarCard(card) {
-      card.classList.toggle('clicado');
+      card.classList.add('clicado');
     }
 
     document.addEventListener('click', function (e) {
-      document.querySelectorAll('.card').forEach(card => {
-        if (!card.contains(e.target)) card.classList.remove('clicado');
+      const cards = document.querySelectorAll('.card');
+      cards.forEach(c => {
+        if (!c.contains(e.target)) {
+          c.classList.remove('clicado');
+        }
       });
     });
 
     function iniciarContador() {
       const inicio = new Date("2025-05-16T00:00:00");
       const agora = new Date();
-      const diff = agora - inicio;
-      const anos = Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
-      const meses = Math.floor((diff % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24 * 30));
-      const dias = Math.floor((diff % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
-      const horas = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutos = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-      const segundos = Math.floor((diff % (1000 * 60)) / 1000);
-      let resultado = "";
-      if (anos > 0) resultado += `${anos}a `;
-      if (meses > 0) resultado += `${meses}m `;
-      if (dias > 0) resultado += `${dias}d `;
-      resultado += `${horas}h ${minutos}m ${segundos}s`;
-      document.getElementById("timer").textContent = resultado;
+      let diff = agora - inicio;
+
+      const meses = Math.floor(diff / (1000 * 60 * 60 * 24 * 30.44));
+      diff -= meses * (1000 * 60 * 60 * 24 * 30.44);
+      const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
+      diff -= dias * (1000 * 60 * 60 * 24);
+      const horas = Math.floor(diff / (1000 * 60 * 60));
+      diff -= horas * (1000 * 60 * 60);
+      const minutos = Math.floor(diff / (1000 * 60));
+      diff -= minutos * (1000 * 60);
+      const segundos = Math.floor(diff / 1000);
+
+      const timer = document.getElementById("timer");
+      let output = '';
+      if (meses > 0) output += `${meses}m `;
+      if (dias > 0 || meses > 0) output += `${dias}d `;
+      if (horas > 0 || dias > 0 || meses > 0) output += `${horas}h `;
+      if (minutos > 0 || horas > 0 || dias > 0 || meses > 0) output += `${minutos}m `;
+      output += `${segundos}s`;
+
+      timer.textContent = output;
     }
 
     setInterval(iniciarContador, 1000);
