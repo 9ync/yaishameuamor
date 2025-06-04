@@ -5,7 +5,7 @@
   user-select: none;
 }
 
-body, html {
+html, body {
   height: 100%;
   background: #0f0f0f;
   color: #ffffff;
@@ -20,10 +20,9 @@ body, html {
   justify-content: center;
   align-items: center;
   background: #000;
-  animation: fadeIn 1s ease-in-out;
 }
 
-#confirmacao button {
+#botaoLuv {
   font-size: 20px;
   padding: 12px 32px;
   background: transparent;
@@ -31,14 +30,20 @@ body, html {
   color: #fff;
   border-radius: 30px;
   cursor: pointer;
-  transition: 0.4s ease;
-  animation: brilhoLento 10s ease-in-out infinite;
+  transition: all 0.3s ease;
+  animation: brilhoFraco 10s ease-in-out infinite;
+  user-select: none;
+  -webkit-user-select: none;
+  outline: none;
 }
 
-#confirmacao button:hover {
-  background: #fff;
-  color: #000;
-  box-shadow: 0 0 15px rgba(255,255,255,0.3);
+#botaoLuv:hover {
+  transform: scale(1.05);
+}
+
+#botaoLuv:active {
+  transform: scale(0.97);
+  filter: brightness(1.2);
 }
 
 #site {
@@ -48,8 +53,8 @@ body, html {
   justify-content: center;
   min-height: 100vh;
   padding: 40px 20px;
-  animation: fadeIn 1s ease forwards;
   background: #0f0f0f;
+  opacity: 0;
 }
 
 .container {
@@ -108,7 +113,7 @@ body, html {
   margin-bottom: 4px;
   color: #fff;
   font-weight: 200;
-  animation: brilhoLento 10s ease-in-out infinite;
+  animation: brilhoFraco 10s ease-in-out infinite;
   transform: translateX(5px);
 }
 
@@ -130,7 +135,7 @@ body, html {
   font-size: 13px;
   color: #ccc;
   font-weight: 200;
-  animation: brilhoLento 10s ease-in-out infinite;
+  animation: brilhoFraco 10s ease-in-out infinite;
 }
 
 .link-special {
@@ -139,7 +144,7 @@ body, html {
   color: #ffffff;
   font-weight: 200;
   text-decoration: none;
-  animation: brilhoLento 12s ease-in-out infinite;
+  animation: brilhoFraco 12s ease-in-out infinite;
   text-shadow: 0 0 6px rgba(255,255,255,0.2);
 }
 
@@ -152,12 +157,7 @@ footer {
   font-size: 13px;
   color: #777;
   text-align: center;
-  animation: brilhoLento 10s ease-in-out infinite;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to   { opacity: 1; transform: translateY(0); }
+  animation: brilhoFraco 10s ease-in-out infinite;
 }
 
 @keyframes linhaExpandir {
@@ -165,7 +165,7 @@ footer {
   to { width: 80%; }
 }
 
-@keyframes brilhoLento {
-  0%, 100% { text-shadow: 0 0 4px rgba(255,255,255,0.2); }
-  50% { text-shadow: 0 0 10px rgba(255,255,255,0.4); }
-  }
+@keyframes brilhoFraco {
+  0%, 100% { box-shadow: 0 0 6px rgba(255,255,255,0.05); }
+  50% { box-shadow: 0 0 10px rgba(255,255,255,0.08); }
+}
