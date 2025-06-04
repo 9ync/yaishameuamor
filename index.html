@@ -4,23 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>i luv my gf</title>
-  <style>
-    html, body {
-      background-color: #0f0f0f;
-      color: #fff;
-    }
-  </style>
-  <link rel="icon" href="https://i.postimg.cc/XJ8jyqNt/file-00000000e63c623085dc6adf67a51742.png" type="image/png" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="https://i.postimg.cc/XJ8jyqNt/file-00000000e63c623085dc6adf67a51742.png" type="image/png" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@200&display=swap" rel="stylesheet">
-  <meta property="og:title" content="♡" />
-  <meta property="og:description" content="16.05" />
-  <meta property="og:url" content="https://yaisha.xyz" />
-  <meta property="og:type" content="website" />
 </head>
 <body>
   <div id="confirmacao">
-    <button onclick="mostrarSite()">luv</button>
+    <button id="botaoLuv" onclick="mostrarSite()">luv</button>
   </div>
 
   <div id="site">
@@ -54,7 +44,13 @@
   <script>
     function mostrarSite() {
       document.getElementById('confirmacao').style.display = 'none';
-      document.getElementById('site').style.display = 'flex';
+      const site = document.getElementById('site');
+      site.style.display = 'flex';
+      site.style.opacity = 0;
+      setTimeout(() => {
+        site.style.transition = 'opacity 1s ease';
+        site.style.opacity = 1;
+      }, 10);
       const audio = new Audio('musica.mp3');
       audio.loop = true;
       audio.play();
