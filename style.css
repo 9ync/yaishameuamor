@@ -20,6 +20,7 @@ body, html {
   justify-content: center;
   align-items: center;
   background: #000;
+  animation: fadeIn 1s ease-in-out;
 }
 
 #confirmacao button {
@@ -47,13 +48,8 @@ body, html {
   justify-content: center;
   min-height: 100vh;
   padding: 40px 20px;
+  animation: fadeIn 1s ease forwards;
   background: #0f0f0f;
-  opacity: 0;
-  transition: opacity 1s ease;
-}
-
-#site.fade-in {
-  opacity: 1;
 }
 
 .container {
@@ -159,6 +155,11 @@ footer {
   animation: brilhoLento 10s ease-in-out infinite;
 }
 
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
 @keyframes linhaExpandir {
   from { width: 0; }
   to { width: 80%; }
@@ -167,4 +168,4 @@ footer {
 @keyframes brilhoLento {
   0%, 100% { text-shadow: 0 0 4px rgba(255,255,255,0.2); }
   50% { text-shadow: 0 0 10px rgba(255,255,255,0.4); }
-  }
+}
