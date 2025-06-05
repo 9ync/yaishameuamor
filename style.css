@@ -5,7 +5,7 @@
   user-select: none;
 }
 
-html, body {
+body, html {
   height: 100%;
   background: #0f0f0f;
   color: #ffffff;
@@ -22,7 +22,7 @@ html, body {
   background: #000;
 }
 
-#botaoLuv {
+#confirmacao button {
   font-size: 20px;
   padding: 12px 32px;
   background: transparent;
@@ -30,20 +30,14 @@ html, body {
   color: #fff;
   border-radius: 30px;
   cursor: pointer;
-  transition: all 0.3s ease;
-  animation: brilhoFraco 10s ease-in-out infinite;
-  user-select: none;
-  -webkit-user-select: none;
-  outline: none;
+  transition: 0.4s ease;
+  animation: brilhoLento 10s ease-in-out infinite;
 }
 
-#botaoLuv:hover {
-  transform: scale(1.05);
-}
-
-#botaoLuv:active {
-  transform: scale(0.97);
-  filter: brightness(1.2);
+#confirmacao button:hover {
+  background: #fff;
+  color: #000;
+  box-shadow: 0 0 15px rgba(255,255,255,0.3);
 }
 
 #site {
@@ -55,6 +49,11 @@ html, body {
   padding: 40px 20px;
   background: #0f0f0f;
   opacity: 0;
+  transition: opacity 1s ease;
+}
+
+#site.fade-in {
+  opacity: 1;
 }
 
 .container {
@@ -113,7 +112,7 @@ html, body {
   margin-bottom: 4px;
   color: #fff;
   font-weight: 200;
-  animation: brilhoFraco 10s ease-in-out infinite;
+  animation: brilhoLento 10s ease-in-out infinite;
   transform: translateX(5px);
 }
 
@@ -135,7 +134,7 @@ html, body {
   font-size: 13px;
   color: #ccc;
   font-weight: 200;
-  animation: brilhoFraco 10s ease-in-out infinite;
+  animation: brilhoLento 10s ease-in-out infinite;
 }
 
 .link-special {
@@ -144,7 +143,7 @@ html, body {
   color: #ffffff;
   font-weight: 200;
   text-decoration: none;
-  animation: brilhoFraco 12s ease-in-out infinite;
+  animation: brilhoLento 12s ease-in-out infinite;
   text-shadow: 0 0 6px rgba(255,255,255,0.2);
 }
 
@@ -157,7 +156,7 @@ footer {
   font-size: 13px;
   color: #777;
   text-align: center;
-  animation: brilhoFraco 10s ease-in-out infinite;
+  animation: brilhoLento 10s ease-in-out infinite;
 }
 
 @keyframes linhaExpandir {
@@ -165,7 +164,7 @@ footer {
   to { width: 80%; }
 }
 
-@keyframes brilhoFraco {
-  0%, 100% { box-shadow: 0 0 6px rgba(255,255,255,0.05); }
-  50% { box-shadow: 0 0 10px rgba(255,255,255,0.08); }
-}
+@keyframes brilhoLento {
+  0%, 100% { text-shadow: 0 0 4px rgba(255,255,255,0.2); }
+  50% { text-shadow: 0 0 10px rgba(255,255,255,0.4); }
+  }
